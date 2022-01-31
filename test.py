@@ -87,5 +87,5 @@ model.summary()
 # Run the export. (Run the export only once)
 helper.export(image, params)
 # Run the prediction.
-helper.doPrediction(params)
+helper.prediction(params)
 
