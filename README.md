@@ -23,7 +23,7 @@ If interested, the pre-print version of the article is freely available [here](h
 To use the python scripts, we assume you have a gmail account and have already authenticated GEE and Cloud SDK on your local machine. The scripts are  written in Tensorflow 2.7 so there may be issues with earlier versions. To avoid these steps users could alternatively use the jupyter notebooks available in the notebooks folder to run the scripts in colab.
 
 ## Acknowledgment
-Some functions were adopted from Google Earth Engine example workflow page. The page can be found [here](https://developers.google.com/earth-engine/guides/tf_examples).
+Some functions were adopted from Google Earth Engine example workflow [page](https://developers.google.com/earth-engine/guides/tf_examples).
 
 ## Reference
 
