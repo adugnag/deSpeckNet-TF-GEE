@@ -22,6 +22,9 @@ If interested, the pre-print version of the article is freely available [here](h
 ## Dependencies
 To use the python scripts, we assume you have a gmail account and have already authenticated GEE and Cloud SDK on your local machine. The scripts are  written in Tensorflow 2.7 so there may be issues with earlier versions. To avoid these steps users could alternatively use the jupyter notebooks available in the notebooks folder to run the scripts in colab.
 
+## Acknowledgment
+I have used some functions from [Google Earth Engine page](https://developers.google.com/earth-engine/guides/tf_examples)
+
 ## Reference
 
 If you use these scripts please cite our paper as: A. G. Mullissa, D. Marcos, D. Tuia, M. Herold and J. Reiche, "deSpeckNet: Generalizing Deep Learning-Based SAR Image Despeckling," in IEEE Transactions on Geoscience and Remote Sensing, vol. 60, pp. 1-15, 2022, Art no. 5200315, doi: 10.1109/TGRS.2020.3042694..
