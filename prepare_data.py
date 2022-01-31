@@ -5,7 +5,28 @@ Created on Mon Jan 31 13:02:48 2022
 
 @author: adugna
 """
-
+"""
+    Parameter:
+        START_DATE: The earliest date to include images for (inclusive).
+        END_DATE: The latest date to include images for (exclusive).
+        POLARIZATION: The Sentinel-1 image polarization to select.
+            'VV' - selects the VV polarization.
+            'VH' - selects the VH polarization.
+            "VVVH' - selects both the VV and VH polarization for processing.
+        ORBIT:  The orbits to include. (string: BOTH, ASCENDING or DESCENDING)
+        GEOMETRY: The region to include imagery within.
+        CLIP_TO_ROI: (Optional) Clip the selected images to the region of interest.
+        EXPORT: export training data to google cloud storage (GCS) or google drive. (string:'GCS or'Drive')
+        BUCKET: GCS bucket name (string)
+        DRIVE: Mount location for Google drive (string path)
+        FOLDER: Folder name in GCS bucket or drive (string)
+        TRAINING_BASE: trining data name (string)
+        EVAL_BASE: validation data name (string)
+        MODE: runs script in training or tuning mode (string: 'Training' or 'Tuning')
+        KERNEL_SIZE: Patch length for training data export (integer)
+        KERNEL_SHAPE: Patch size for training data export (list)
+        
+"""
 
 # Import, and initialize the Earth Engine library. (Earth engine should be authenticated on the local machine )
 import ee
@@ -34,15 +55,14 @@ params = {  'START_DATE': '2021-01-01',
             'CLIP_TO_ROI': False,
           # GCS bucket
             'EXPORT': 'GCS',
-            'BUCKET' : 'senalerts_dl3',
+            'BUCKET' : 'GCS-bucket-name',
             'DRIVE' : '/content/drive',
             'FOLDER' : 'deSpeckNet',
             'TRAINING_BASE' : 'training_deSpeckNet_DUAL_Median_mask_test',
             'EVAL_BASE' : 'eval_deSpeckNet_DUAL_median_mask_test',
             'MODE' : 'training',
             'KERNEL_SIZE' : 40,
-            'KERNEL_SHAPE' : [40, 40],
-            'KERNEL_BUFFER' : [20, 20]
+            'KERNEL_SHAPE' : [40, 40]
             }
 
 #process Sentinel 1 image collection
