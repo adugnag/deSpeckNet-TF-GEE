@@ -19,7 +19,7 @@ import os
 
 params = {   # GCS bucket
             'EXPORT': 'GCS',
-            'BUCKET' : 'senalerts_dl3',
+            'BUCKET' : 'GCS-bucket-name',
             'DRIVE' : '/content/drive',
             'FOLDER' : 'deSpeckNet',
             'TRAINING_BASE' : 'training_deSpeckNet_DUAL_Median_mask_test',
@@ -70,6 +70,7 @@ else:
 training = helper.get_training_dataset(params, FEATURES, FEATURES_DICT)
 evaluation = helper.get_eval_dataset(params)
 
+#Check data
 print(iter(training.take(1)).next())
 
 ###########################################
