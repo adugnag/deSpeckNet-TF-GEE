@@ -46,7 +46,7 @@ params = {   # GCS bucket
             'FORMAT': 'DB',
             'CLIP_TO_ROI': True,
             'EXPORT': 'GCS',
-            'BUCKET' : 'your-GCS-bucket-name',
+            'BUCKET' : 'GCS-bucket-name',
             'DRIVE' : '/content/drive',
             'FOLDER' : 'deSpeckNet',
             'USER_ID' : 'users/adugnagirma',
