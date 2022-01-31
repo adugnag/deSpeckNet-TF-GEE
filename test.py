@@ -69,7 +69,6 @@ s1_processed = s1_processed.select(bandNames)
 print('Number of images in the collection: ', s1_processed.size().getInfo())
 
 image = s1_processed.first()
-# Specify inputs (Sentinel-1 bands) to the model and the response variable.
 
 ###########################################
 # EXPORT AND INFERENCE
