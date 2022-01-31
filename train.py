@@ -51,10 +51,8 @@ if params['MODE'] == 'training':
 else:
   FEATURES = params['BANDS']  + params['RESPONSE_TU']
 
-# Specify the size and shape of patches expected by the model.
-KERNEL_SHAPE = [params['KERNEL_SIZE'], params['KERNEL_SIZE']]
-
-COLUMNS = [tf.io.FixedLenFeature(shape=KERNEL_SHAPE, dtype=tf.float32) for k in FEATURES]
+# Specify the feature columns and create a feature dictionary for the data pipeline.
+COLUMNS = [tf.io.FixedLenFeature(shape=params['KERNEL_SHAPE'], dtype=tf.float32) for k in FEATURES]
 FEATURES_DICT = dict(zip(FEATURES, COLUMNS))
 
 IMAGE_CHANNELS = len(params['BANDS'])
