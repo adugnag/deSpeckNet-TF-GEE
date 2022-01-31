@@ -6,7 +6,7 @@ This repository contains the re-implementation of our paper [*deSpeckNet: Genera
 
 ## Architecture
 
-It uses a simaese architecture to reconstruct the clean image and noise image simultaneously and reconstructing the original noisy image using two mean square error loss functions. To fine tune the model to new images with unknown speckle distribution, the model *does not* require any clean reference image.  
+deSpeckNet uses a simaese architecture to reconstruct the clean image and noise image simultaneously and reconstructing the original noisy image using two mean square error loss functions. To fine tune the model to new images with unknown speckle distribution, the model *does not* require any clean reference image.  
 ![drawing1](https://user-images.githubusercontent.com/48068921/102690422-96f76f00-4205-11eb-9ef0-5d98daecdee6.png)
 ![drawing_finetune](https://user-images.githubusercontent.com/48068921/102690424-99f25f80-4205-11eb-825b-dd9887935e67.png)
 
