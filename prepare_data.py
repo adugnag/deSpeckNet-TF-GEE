@@ -4,8 +4,7 @@
 Created on Mon Jan 31 13:02:48 2022
 
 @author: adugna
-"""
-"""
+
     Parameter:
         START_DATE: The earliest date to include images for (inclusive).
         END_DATE: The latest date to include images for (exclusive).
