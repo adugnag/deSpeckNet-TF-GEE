@@ -7,7 +7,7 @@ Created on Mon Jan 31 13:02:48 2022
 """
 
 
-# Import, and initialize the Earth Engine library. (Earth engine should be authenticated on the locl machine )
+# Import, and initialize the Earth Engine library. (Earth engine should be authenticated on the local machine )
 import ee
 ee.Initialize()
 import helper
