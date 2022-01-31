@@ -127,5 +127,5 @@ if params['MODE'] == 'training':
 # Save the trained model
   model.save(MODEL_DIR, save_format='tf')
 else:
-  MODEL_DIR = 'gs://' + params['BUCKET'] + '/' + params['FOLDER'] + '/' + 'tune'
+  MODEL_DIR = MODEL_DIR + '_' + 'tune'
   model.save(MODEL_DIR, save_format='tf')
