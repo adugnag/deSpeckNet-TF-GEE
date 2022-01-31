@@ -76,7 +76,11 @@ image = s1_processed.first()
 ###########################################
 
 # load the saved model
-MODEL_DIR = 'gs://' + params['BUCKET'] + '/' + params['FOLDER'] + '/' + params['MODEL_NAME']
+if params['EXPORT'] == 'GCS':
+    MODEL_DIR = 'gs://' + params['BUCKET'] + '/' + params['FOLDER'] + '/' + params['MODEL_NAME']
+else:
+    MODEL_DIR = params['DRIVE'] + '/' + params['FOLDER'] + '/' + params['MODEL_NAME']
+
 #custom_objects={'TransformerBlock': TransformerBlock}
 model = tf.keras.models.load_model(MODEL_DIR)
 model.summary()
