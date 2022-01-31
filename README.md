@@ -13,14 +13,14 @@ deSpeckNet uses a simaese architecture to reconstruct the clean image and the or
 If interested, the pre-print version of the article is freely available [here](https://arxiv.org/pdf/2012.03066.pdf)
 
 ## Usage
- To train a model, the user needs to provide an area of interest in GEE geometry format and run the prepare_data.py first to prepare the training datasets. The user needs to select which mode to run the script on, either in training mode or tuning mode. The user needs to also specify their preference for storage of data as 'GCS' or 'Drive'. It is assumed the user have installed and configured Google cloud SDK on their local machine. For users that prefer to use google drive, the drive should be mounted at /content/drive for the scripts to run. 
+ To train a model, the user needs to provide an area of interest in GEE geometry format and run the prepare_data.py first to prepare the training datasets. The user needs to select training mode to run the script. The user needs to also specify their preference for storage of data as 'GCS' or 'Drive'. It is assumed the user have installed and configured Google cloud SDK on their local machine. For users that prefer to use google drive, the drive should be mounted at /content/drive for the scripts to run. 
  
- To fine tune the model, the user needs to execute the prepare_data.py script one more time in tuning mode. Once a model is trained, the user can directly execute the test.py script to make inference on the selected data. By default, the despeckled image is uploaded to GEE. 
+ To fine tune the model, the user needs to execute the prepare_data.py script one more time in tuning mode. Once a model is trained, the user can directly execute the test.py script to make inference on the fine tuned area. By default, the despeckled image is uploaded to GEE. 
  
  A jupyter notebook version of the scripts is also included in the notebook folder, which should make it easier for users to run the code in Google colab without worrying about software dependencies. 
 
 ## Dependencies
-To use the python scripts, we assume you have a gmail account and have already authenticated GEE and Cloud SDK on your local machine. The scripts are  written in Tensorflow 2.7 so there may be issues with earlier versions. To avoid these steps users could alternatively use the jupyter notebooks available in the notebooks folder to run the scripts in colab.
+To use the python scripts, we assume you have a gmail account and have already authenticated GEE and Cloud SDK on your local machine. The scripts are  written in Tensorflow 2.7 so there may be issues with earlier versions of Tensorflow. To avoid these steps users could alternatively use the jupyter notebooks available in the notebooks folder to run the scripts in colab.
 
 ## Acknowledgment
 Some functions were adopted from Google Earth Engine example workflow [page](https://developers.google.com/earth-engine/guides/tf_examples).
