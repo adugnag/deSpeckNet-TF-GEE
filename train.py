@@ -95,9 +95,9 @@ if params['MODE'] != 'training':
 # %load_ext tensorboard
 
 import tensorboard
-tensorboard.__version__
+print(tensorboard.__version__)
 
-# Define the Keras TensorBoard callback.
+# Define the TensorBoard callback.
 os.mkdir(params['MODEL_NAME'])
 logdir= params['MODEL_NAME']
 tensorboard_callback = tf.keras.callbacks.TensorBoard(log_dir=logdir)
