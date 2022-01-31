@@ -186,7 +186,6 @@ def exportDataset(params, train_poly, val_poly, arrays, FEATURES):
 class dataAugment(tf.keras.layers.Layer):
   def __init__(self, seed=42):
     super().__init__()
-    # both use the same seed, so they'll make the same random changes.
     self.augment_inputs = tf.keras.layers.RandomFlip(mode="horizontal", seed=seed)
     self.augment_labels = tf.keras.layers.RandomFlip(mode="horizontal", seed=seed)
     self.augment_masks = tf.keras.layers.RandomFlip(mode="horizontal", seed=seed)
