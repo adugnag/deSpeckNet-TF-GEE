@@ -27,4 +27,4 @@ Some functions were adopted from Google Earth Engine example workflow page. The 
 
 ## Reference
 
-A. G. Mullissa, D. Marcos, D. Tuia, M. Herold and J. Reiche, "deSpeckNet: Generalizing Deep Learning-Based SAR Image Despeckling," in IEEE Transactions on Geoscience and Remote Sensing, vol. 60, pp. 1-15, 2022, Art no. 5200315, doi: 10.1109/TGRS.2020.3042694..
+**A. G. Mullissa, D. Marcos, D. Tuia, M. Herold and J. Reiche, "deSpeckNet: Generalizing Deep Learning-Based SAR Image Despeckling," in *IEEE Transactions on Geoscience and Remote Sensing*, vol. 60, pp. 1-15, 2022, Art no. 5200315, doi: 10.1109/TGRS.2020.3042694.**
