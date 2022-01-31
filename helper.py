@@ -334,7 +334,7 @@ def TVloss(y_true, y_pred):
   return tf.reduce_sum(tf.image.total_variation(y_pred))
 
 ###########################################
-# 2. EXPORT AND PREDICT
+# 5. EXPORT AND PREDICT
 ###########################################
 
 def export(image, params):
