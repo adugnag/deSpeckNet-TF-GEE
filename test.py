@@ -85,8 +85,6 @@ else:
 model = tf.keras.models.load_model(MODEL_DIR)
 model.summary()
 
-"""#Export and Inference"""
-
 # Run the export. (Run the export only once)
 helper.export(image, params)
 # Run the prediction.
