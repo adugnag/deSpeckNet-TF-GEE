@@ -1,6 +1,6 @@
 # deSpeckNet-TF-GEE
  
-This repository is the re-implementation of our paper [*deSpeckNet: Generalizing Deep Learning Based SAR Image Despeckling*](https://ieeexplore.ieee.org/document/9298453) published in IEEE Transactions on Geoscience and Remote Sensing. The original paper version of the code was implemented in Matlab but I think implementing the method in Tensorflow and Google Earth Engine (GEE) will improve its efficency and usabiltiy in the remote sensing community. The implementation uses python entirely and it seamlessly integrates image preparation in GEE with deep learning in Tensorflow.
+This repository is the re-implementation of our paper [*deSpeckNet: Generalizing Deep Learning Based SAR Image Despeckling*](https://ieeexplore.ieee.org/document/9298453) published in *IEEE Transactions on Geoscience and Remote Sensing*. The original paper version of the code was implemented in Matlab but I think implementing the method in Tensorflow and Google Earth Engine (GEE) will improve its efficency and usabiltiy in the remote sensing community. The implementation uses python entirely and it seamlessly integrates image preparation in GEE with deep learning in Tensorflow.
 
 **Note: I have made some modificatons from the original implementation, such as the data is processed in dB scale and patch density is different from the original Matlab implementation and the optimizer is Adam.**
 
