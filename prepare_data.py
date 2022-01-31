@@ -51,9 +51,8 @@ bandNames = s1_processed.first().bandNames().remove('angle')
 s1_processed = s1_processed.select(bandNames)
 print('Number of images in the collection: ', s1_processed.size().getInfo())
 
-#n = s1_processed.size().getInfo();
-#colList = s1_processed.toList(n);
-
+#Uncomment for larger scenes
+#image = s1_processed.mosaic()
 image = s1_processed.first()
 bandNames = image.bandNames().getInfo()
 label =s1_processed.reduce(ee.Reducer.median())
