@@ -73,12 +73,11 @@ print('Number of images in the collection: ', s1_processed.size().getInfo())
 #Uncomment for larger scenes
 #image = s1_processed.mosaic()
 image = s1_processed.first()
-bandNames = image.bandNames().getInfo()
 label =s1_processed.reduce(ee.Reducer.median())
 stddev = s1_processed.reduce(ee.Reducer.stdDev())
 #Mask out pixels with high stdDev. Threshold is higher as the data is in dB.
-maskBand = ['VV_mask', 'VH_mask']
-#maskBand = bandNames.map(lambda bandName: ee.String(bandName).cat('_mask'))
+#maskBand = ['VV_mask', 'VH_mask']
+maskBand = bandNames.map(lambda bandName: ee.String(bandName).cat('_mask'))
 mask = stddev.lte(2.0).rename(maskBand)
 
 ###########################################
@@ -86,9 +85,9 @@ mask = stddev.lte(2.0).rename(maskBand)
 ###########################################
 
 # Specify inputs (Sentinel-1 bands) to the model and the response variable.
-BANDS = image.bandNames().getInfo()
+BANDS = bandNames
 RESPONSE_TR = label.bandNames().getInfo()
-RESPONSE_TU = image.bandNames().getInfo()
+RESPONSE_TU = bandNames
 MASK = mask.bandNames().getInfo()
 
 if params['MODE'] == 'training':
