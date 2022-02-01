@@ -222,10 +222,8 @@ def to_tuple_tune(inputs):
   stacked = tf.transpose(stacked, [1, 2, 0])
   data = stacked[:,:,:len(params['BANDS'])]
   #select features
-  if len(params['BANDS']) ==2:
-      label = stacked[:,:,len(params['BANDS']):len(params['BANDS'])+2]
-  else:
-      label = stacked[:,:,len(params['BANDS']):len(params['BANDS'])+1]
+  
+  label = stacked[:,:,len(params['BANDS']):]
   return data, (label, data)
 
 def get_dataset(pattern, params):
