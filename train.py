@@ -68,7 +68,7 @@ else:
 
 #Use the tf.data api to build our data pipeline
 training = helper.get_training_dataset(params, FEATURES, FEATURES_DICT)
-evaluation = helper.get_eval_dataset(params)
+evaluation = helper.get_eval_dataset(params, FEATURES, FEATURES_DICT)
 
 #Check data
 print(iter(training.take(1)).next())
