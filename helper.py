@@ -253,7 +253,10 @@ def get_training_dataset(params, FEATURES, FEATURES_DICT):
     return dataset
 
 
-def get_eval_dataset(params):
+def get_eval_dataset(params, FEATURES, FEATURES_DICT):
+    global params
+    global FEATURES
+    global FEATURES_DICT
     if params['EXPORT'] == 'GCS':
         glob = 'gs://' + params['BUCKET'] + '/' + params['FOLDER'] + '/' + params['EVAL_BASE'] + '*'
     else:
