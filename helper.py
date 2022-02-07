@@ -193,7 +193,7 @@ class dataAugment(tf.keras.layers.Layer):
   def call(self, inputs, labels, masks):
     inputs = self.augment_inputs(inputs)
     labels = self.augment_labels(labels)
-    masks = self.augment_labels(masks)
+    masks = self.augment_masks(masks)
     return inputs, (labels, inputs), masks
 
 
