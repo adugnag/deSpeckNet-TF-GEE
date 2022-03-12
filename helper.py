@@ -226,7 +226,19 @@ def to_tuple_tune(inputs):
   label = stacked[:,:,len(params['BANDS']):]
   return data, (label, data)
 
-def get_dataset(pattern, params):
+def get_dataset_tr(pattern, params):
+  glob = tf.io.gfile.glob(pattern)
+  #glob =tf.compat.v1.gfile.Glob(pattern)
+  dataset = tf.data.TFRecordDataset(glob, compression_type='GZIP')
+  dataset = dataset.map(parse_tfrecord, num_parallel_calls=5)
+  if params['MODE'] == 'training':
+      dataset = dataset.map(to_tuple_train, num_parallel_calls=5)
+      dataset = dataset.map(dataAugment(), num_parallel_calls=5)
+  else:
+      dataset = dataset.map(to_tuple_tune, num_parallel_calls=5)
+  return dataset
+
+def get_dataset_eval(pattern, params):
   glob = tf.io.gfile.glob(pattern)
   #glob =tf.compat.v1.gfile.Glob(pattern)
   dataset = tf.data.TFRecordDataset(glob, compression_type='GZIP')
@@ -248,7 +260,7 @@ def get_training_dataset(params, FEATURES, FEATURES_DICT):
         glob = 'gs://' + params['BUCKET'] + '/' + params['FOLDER'] + '/' + params['TRAINING_BASE'] + '*'
     else:
         glob = params['DRIVE'] + '/' + params['FOLDER'] + '/' + params['TRAINING_BASE'] + '*'
-    dataset = get_dataset(glob,params)
+    dataset = get_dataset_tr(glob,params)
     dataset = dataset.shuffle(params['BUFFER_SIZE']).batch(params['BATCH_SIZE']).repeat()
     return dataset
 
@@ -261,7 +273,7 @@ def get_eval_dataset(params, FEATURES, FEATURES_DICT):
         glob = 'gs://' + params['BUCKET'] + '/' + params['FOLDER'] + '/' + params['EVAL_BASE'] + '*'
     else:
         glob = params['DRIVE'] + '/' + params['FOLDER'] + '/' + params['EVAL_BASE'] + '*'
-    dataset = get_dataset(glob,params)
+    dataset = get_dataset_eval(glob,params)
     dataset = dataset.batch(1).repeat()
     return dataset
 
