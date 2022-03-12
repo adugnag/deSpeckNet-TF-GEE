@@ -245,7 +245,7 @@ def get_dataset_eval(pattern, params):
   dataset = dataset.map(parse_tfrecord, num_parallel_calls=5)
   if params['MODE'] == 'training':
       dataset = dataset.map(to_tuple_train, num_parallel_calls=5)
-      dataset = dataset.map(dataAugment(), num_parallel_calls=5)
+      #dataset = dataset.map(dataAugment(), num_parallel_calls=5)
   else:
       dataset = dataset.map(to_tuple_tune, num_parallel_calls=5)
   return dataset
