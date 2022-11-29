@@ -13,7 +13,7 @@ deSpeckNet uses a siamese architecture to reconstruct the clean image and the or
 If interested, the pre-print version of the article is freely available [here](https://arxiv.org/pdf/2012.03066.pdf)
 
 ## Usage
- To train a model, the user needs to provide an area of interest in GEE geometry format and run the prepare_data.py first to prepare the training datasets. The user needs to select training mode to run the script. The user needs to also specify their preference for storage of data as 'GCS' or 'Drive'. It is assumed the user have installed and configured Google cloud SDK on their local machine. For users that prefer to use google drive, the drive should be mounted at /content/drive for the scripts to run. 
+ To train a model, the user needs to provide an area of interest in GEE geometry format and run the prepare_data.py first to prepare the training datasets. The user needs to select training mode to run the script. The user needs to also specify their preference for storage of data as 'GCS' or 'Drive'. For users that prefer to use google drive, the drive should be mounted at /content/drive for the scripts to run. 
  
  A jupyter notebook version of the scripts is also included in the notebook folder, which should make it easier for users to run the code in Google colab without worrying about software dependencies. 
 
